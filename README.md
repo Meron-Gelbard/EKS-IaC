@@ -8,14 +8,14 @@ This project provides a Terraform module for deploying a comprehensive AWS infra
 
 Before you begin, ensure you have the following prerequisites installed and configured on your local machine:
 
-1. **AWS CLI:** Install and configure the AWS Command Line Interface with appropriate credentials. [Install AWS CLI](https://aws.amazon.com/cli/)
+1. **AWS CLI:** Install and configure the `AWS Command Line Interface` with appropriate credentials. [Install AWS CLI](https://aws.amazon.com/cli/)
 
    ```bash
    # Example installation on Linux
    sudo apt-get install awscli
    ```
 
-2. **Terraform:** Install Terraform by following the instructions on [Terraform's official website](https://www.terraform.io/downloads.html).
+2. **Terraform:** Install `Terraform` by following instructions on [Terraform's official website](https://www.terraform.io/downloads.html).
 
    ```bash
    # Example installation on Linux
@@ -31,7 +31,7 @@ Before you begin, ensure you have the following prerequisites installed and conf
    sudo curl -Lo /usr/local/bin/kubectl https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl && sudo chmod +x /usr/local/bin/kubectl
    ```
 
-4. **Helm:** Install Helm by following the instructions on [Helm's official website](https://helm.sh/docs/intro/install/).
+4. **Helm:** Install `Helm` by following the instructions on [Helm's official website](https://helm.sh/docs/intro/install/).
 
    ```bash
    # Example installation on Linux
@@ -43,8 +43,7 @@ Before you begin, ensure you have the following prerequisites installed and conf
 1. **Clone the Repository:**
 
    ```bash
-   git clone <repository_url>
-   cd <repository_directory>
+   git clone https://github.com/Meron-Gelbard/EKS-IaC.git
    ```
 
 2. **Update Dynamic Values:**
@@ -57,7 +56,6 @@ Before you begin, ensure you have the following prerequisites installed and conf
    *(make sure to use "source")*
    
    ```bash
-   cd <repository_directory>
    source setup.sh
    ```
 
@@ -89,7 +87,7 @@ Before you begin, ensure you have the following prerequisites installed and conf
 
 4. **Configure kubectl for EKS:**
 
-   - Once Terraform succefully deployed infrastructure, connect kubectl to the new EKS cluster.
+   - Once Terraform succefully deployed infrastructure, connect *kubectl* to the new EKS cluster.
 
    ```bash
    aws eks --region $AWS_REGION update-kubeconfig --name $CLUSTER_NAME
@@ -103,7 +101,7 @@ Before you begin, ensure you have the following prerequisites installed and conf
 
 5. **Deploy Web Application with Helm:**
 
-   - Install the Helm chart release with the set values from environment variable.
+   - Install the *Helm chart* release with the set values from environment variable.
     *(from root repo directory)*
 
    ```bash
@@ -125,8 +123,7 @@ Before you begin, ensure you have the following prerequisites installed and conf
    ```
 
    - Get the new Load Balancer service DNS.
-
-    *The app will be available at the domain writen under the <your-app>-service EXTERNAL-IP at the configured port*
+    *The app will be available at the domain writen under the your-app-service `EXTERNAL-IP` at the configured port*
 
    ```bash
    kubectl get svc
@@ -140,8 +137,8 @@ Before you begin, ensure you have the following prerequisites installed and conf
 To update the deployment with different parameters:
 
    - Re-run setup script and re-enter new values.
-   - Re-run 'terraform apply' if needed.
-   - Run 'helm upgrade $APP_NAME ./app_helm_chart/'
+   - Re-run `terraform apply` if needed.
+   - Run `helm upgrade $APP_NAME ./app_helm_chart/` if needed.
 
 
 ## Clean Up Deployment
@@ -160,4 +157,4 @@ helm delete $APP_NAME
 terraform destroy
 ```
 
-**Note:** Destroying resources will permanently delete them!
+**Note:** *Destroying resources will permanently delete them!*
