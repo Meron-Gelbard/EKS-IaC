@@ -1,4 +1,4 @@
-# Project Setup Guide
+# AWS Elastic Kubernetes Service - Infrastructur as Code using Terraform
 
 ## Overview
 
