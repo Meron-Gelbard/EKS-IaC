@@ -1,4 +1,4 @@
-# AWS Elastic Kubernetes Service - Infrastructur as Code using Terraform
+# AWS Elastic Kubernetes Service - Infrastructure as Code using Terraform
 
 ## Overview
 
